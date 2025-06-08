@@ -12,5 +12,8 @@
 void init_buzzer(uint pin);
 
 void beep(uint pin, uint duration_ms);
+void buzzer_off(uint pin);
+void buzzer_on(uint pin);
+void buzzer_alert();
 
 #endif // BUZZER_H

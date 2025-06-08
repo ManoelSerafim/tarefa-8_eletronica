@@ -37,3 +37,23 @@ void beep(uint pin, uint duration_ms) {
     // Pausa entre os beeps
     sleep_ms(100); // Pausa de 100ms
 }
+
+void buzzer_off(uint pin) {
+    // Desativar o sinal PWM (duty cycle 0)
+    pwm_set_gpio_level(pin, 0);
+}
+
+void buzzer_on(uint pin) {
+    // Ativar o sinal PWM com duty cycle de 50%
+    pwm_set_gpio_level(pin, 2048); // 50% do duty cycle para um sinal audível
+}
+
+void buzzer_alert() {
+    // Liga o buzzer
+    buzzer_on(BUZZER_PIN);    
+    sleep_ms(500);
+
+    // Desliga o buzzer imediatamente
+    buzzer_off(BUZZER_PIN);
+    sleep_ms(500);
+}

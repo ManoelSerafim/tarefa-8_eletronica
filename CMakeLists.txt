@@ -39,6 +39,7 @@ add_executable(eletronica eletronica.c
 scr/led.c
 scr/buzzer.c
 scr/botao.c
+scr/sinalpin.c
 )
 
 pico_set_program_name(eletronica "eletronica")
@@ -49,7 +50,7 @@ pico_generate_pio_header(eletronica ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(eletronica 0)
-pico_enable_stdio_usb(eletronica 0)
+pico_enable_stdio_usb(eletronica 1)
 
 # Add the standard library to the build
 target_link_libraries(eletronica
